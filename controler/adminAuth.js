@@ -27,9 +27,11 @@ const adminRegistration = async (req, res) => {
 
 const adminLogin = async (req, res) => {
 
-    const {username, password} = req.body;
+    const {email, password} = req.body;
 
-    if (!username || !password) {
+    console.log(email, password)
+
+    if (!email || !password) {
         return res.status(400).json({
             message: "Please fill all details",
         });
@@ -39,12 +41,12 @@ const adminLogin = async (req, res) => {
 
         let admin = await adminSchema.findOne({
             $or : [
-                {email : username},
-                {userName : username}
+                {email : email},
+                {userName : email}
             ]
         })
 
-        // console.log(admin)
+        console.log(admin)
 
         if(!admin){
             return res.status(404).json({
@@ -72,10 +74,15 @@ const adminLogin = async (req, res) => {
             maxAge: 3600000, 
         })
 
+
+
+        // console.log(token)
+
         return res.status(200).json({
             message:"Login successful",
             data:token
         })
+        
     } catch (error) {
         console.log(error);
         return res.status(500).json({

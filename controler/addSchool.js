@@ -92,7 +92,8 @@ const studentLongin = async (req, res) => {
     }
 
     try {
-        const studentfind = await studentSchema.findOne({email})
+        const studentfind = await studentSchema.findOne({email}).populate('school_id')
+        console.log(studentfind)
         if(!studentfind){
             return res.status(404).json({
                 message:"student not found"
@@ -122,7 +123,8 @@ const studentLongin = async (req, res) => {
 
         return res.status(200).json({
             message:"login success",
-            data:token
+            data:token,
+            user:studentfind
         })
         
     } catch (error) {

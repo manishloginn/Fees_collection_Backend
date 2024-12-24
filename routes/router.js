@@ -5,6 +5,7 @@ const { addSchool, addStudent, studentLongin } = require('../controler/addSchool
 const { studentPayment } = require('../controler/studentPayment')
 const dashboardData = require('../controler/dashboardData')
 const updateStatus = require('../controler/updateStatus')
+const authenticateUser = require('../utils/authenticateUser')
 const router = express.Router()
 
 
@@ -22,10 +23,8 @@ router.post('/student/login', studentLongin)
 
 
 //payment students
-router.post('/payment/status', updateStatus)
+router.post('/payment/status',   updateStatus)
 router.post('/student/payment', studentPayment)
-
-
 
 
 router.get('/dashboardData', dashboardData )

@@ -42,9 +42,7 @@ const studentPayment = async (req, res) => {
         return res.status(201).json({
             message: "Payment processed successfully",
             data: { findcollectrequest, collectRequestStatus },
-          });
-          
-        
+          });  
     } catch (error) {
         console.log( error);
         return res.status(500).json({

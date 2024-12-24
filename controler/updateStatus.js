@@ -3,6 +3,8 @@ const collect_request_status = require("../model/collect_request_status");
 const updateStatus = async (req, res) => {
     const {id, status} = req.body;
 
+    
+
     if(!id || !status)
     {
         return res.status(500).json({message:"please fill all detail "})
