@@ -10,7 +10,7 @@ const connectDB = require('./mongoconnection/mongoConnect.js');
 app.use(cookieParser());
 app.use(cors({
     // origin: 'http://localhost:5173', 
-    origin: 'https://fees-collection-frontend.onrender.com', 
+    origin: 'https://fees-collection-frontend.vercel.app', 
     credentials: true,              
 }));
 
