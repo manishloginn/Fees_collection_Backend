@@ -48,6 +48,8 @@ const addSchool = async (req, res) => {
 const addStudent = async (req, res) => {
     const {student_id, name, school_id, email, password} = req.body;
 
+    console.log(student_id, name, school_id, email, password)
+
     
     if (!student_id || !name || !school_id || !email || !password) {
         return res.status(400).json({

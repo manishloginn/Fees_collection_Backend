@@ -1,10 +1,17 @@
 const JWT = require('jsonwebtoken')
 
+
+
+
+
 const authenticateUser = (req, res, next) => {
-    // const token = req?.headers["authorization"]?.slice(8);
-    const token = req.cookies.adminToken;  
+
+    const token = req.cookies.adminToken
+
 
     console.log(token)
+
+    // console.log(token)
 
     
     if (!token) {
