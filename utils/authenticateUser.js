@@ -11,7 +11,6 @@ const authenticateUser = (req, res, next) => {
 
     console.log(token)
 
-    // console.log(token)
 
     
     if (!token) {

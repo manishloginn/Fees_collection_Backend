@@ -24,7 +24,8 @@ router.post('/student/login', studentLongin)
 
 
 //payment students
-router.post('/payment/status', authenticateUser,  updateStatus)
+// router.post('/payment/status', authenticateUser,  updateStatus)
+router.post('/payment/status',  updateStatus)
 router.post('/student/payment', studentPayment)
 
 router.get('/collect_requests', getcollect_requestsdata)
